@@ -1,0 +1,57 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+  }
+  
+  h1 {
+    text-align: center;
+  }
+  
+  .container {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .left-column {
+    flex-basis: 70%;
+  }
+  
+  .right-column {
+    flex-basis: 28%;
+  }
+  
+  .card {
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .radio-group {
+    margin-bottom: 5px;
+  }
+  
+  .appliance {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+  }
+  
+  .number-input {
+    margin-left: 10px;
+    width: 50px;
+  }
+  
+  .column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .column:not(:last-child) {
+    border-right: 1px solid #ccc;
+    padding-right: 10px;
+    margin-right: 10px;
+  }
+  

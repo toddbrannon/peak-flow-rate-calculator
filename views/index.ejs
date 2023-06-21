@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Peak Flow Rate Calculator</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <h1>Peak Flow Rate Calculator</h1>
+
+  <div class="container">
+    <div class="left-column">
+      <div class="card">
+        <h2>Select applicable standard</h2>
+        <div class="radio-group">
+          <input type="radio" id="bs6700" name="standard" value="BS 6700">
+          <label for="bs6700">BS 6700</label>
+        </div>
+        <div class="radio-group">
+          <input type="radio" id="bs806" name="standard" value="BS 806">
+          <label for="bs806">BS 806</label>
+        </div>
+        <div class="radio-group">
+          <input type="radio" id="din1988" name="standard" value="DIN 1988-3">
+          <label for="din1988">DIN 1988-3</label>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Usage</h2>
+        <div class="radio-group">
+          <input type="radio" id="low" name="usage" value="Low">
+          <label for="low">Low</label>
+        </div>
+        <div class="radio-group">
+          <input type="radio" id="medium" name="usage" value="Medium">
+          <label for="medium">Medium</label>
+        </div>
+        <div class="radio-group">
+          <input type="radio" id="high" name="usage" value="High">
+          <label for="high">High</label>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>DIN-1988-3 Options</h2>
+        <label for="building-type">Select Building Type</label>
+        <select id="building-type">
+          <option value="Administration Building">Administration Building</option>
+          <option value="Hospital">Hospital</option>
+          <option value="Hotel">Hotel</option>
+          <option value="Leisure centre">Leisure centre</option>
+          <option value="Nursing home">Nursing home</option>
+          <option value="Old peoples residence">Old peoples residence</option>
+          <option value="Residential building">Residential building</option>
+          <option value="School">School</option>
+        </select>
+      </div>
+
+      <button id="calculate-btn">Calculate</button>
+    </div>
+
+    <div class="right-column">
+      <div class="card">
+        <h2>Appliances</h2>
+        <div class="column">
+          <div class="appliance">
+            <span class="appliance-description">Wash hand basins</span>
+            <input type="number" class="number-input" min="0" max="999">
+          </div>
+          <div class="appliance">
+            <span class="appliance-description">Sinks</span>
+            <input type="number" class="number-input" min="0" max="999">
+          </div>
+          <div class="appliance">
+            <span class="appliance-description">Non-domestic sink</span>
+            <input type="number" class="number-input" min="0" max="999">
+          </div>
+          <div class="appliance">
+            <span class="appliance-description">Showers</span>
+            <input type="number" class="number-input" min="0" max="999">
+          </div>
+          <div class="appliance">
+            <span class="appliance-description">Baths</span>
+            <input type="number" class="number-input" min="0" max="999">
+          </div>
+          <div class="appliance">
+            <span class="appliance-description">Bidets</span>
+            <input type="number" class="number-input" min="0" max="999">
+          </div>
+          <div class="appliance">
+            <span class="appliance-description">Washing machines</span>
+            <input type="number" class="number-input" min="0" max="999">
+          </div>
+          <div class="appliance">
+            <span class="appliance-description">Dish washers</span>
+            <input type="number" class="number-input" min="0" max="999">
+          </div>
+        </div>
+        <div class="column">
+          <h3>Number</h3>
+        </div>
+        <div class="column">
+          <h3>LUs</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/js/script.js"></script>
+</body>
+
+</html>
