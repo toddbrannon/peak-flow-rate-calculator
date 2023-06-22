@@ -12,5 +12,12 @@
   .header-label {
      font-weight: bold;
      font-size: 20px;
-     text-decoration: underline;
+  }
+
+  .row {
+    display: flex;
+  }
+
+  .card {
+    flex: 1;
   }

@@ -4,141 +4,97 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
   <title>Peak Flow Rate Calculator</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="/css/custom.css">
-  <!-- <style>
-    .row {
-      display: flex;
-    }
-
-    .card {
-      flex: 1;
-    }
-  </style> -->
 </head>
 
-<body class="vh-100">
+<body>
 
-    <h1 class="text-center my-5">Peak Flow Rate Calculator</h1>
-    <hr>
+    <h1 class="text-center my-4">Peak Flow Rate Calculator</h1>
 
-  
-
-  <div class="container m-auto">
-
-    <!-- Row for 'Calculate' button and Output -->
-    <div class="row mb-4">
-      <div class="col-md-6">
-        <div class="d-flex flex-column h-100 justify-content-end">
-          <div class="mt-4 text-end">
-            <button type="button" class="btn btn-primary btn-md" id="calculate-btn">Calculate</button>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-6">
-        <div class="d-flex flex-column h-100 justify-content-start">
-          <div class="mt-4 text-start">
-            <div class="output-box w-25"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-    
-    
-
-    <!-- END row for 'Calculate' button and Output -->
-
+  <div class="container">
     <div class="row">
-      <!-- Left Column -->
-      <div class="col-md-6">
-        <div class="d-flex flex-column h-100">
-          <!-- First Card -->
-          
-          <div class="card mb-3 bg-light flex-grow-1">
-            <div class="card-body">
-              <!-- Card content -->
-              <h2 class="card-title text-center mb-4">Select applicable standard</h2>
-
-                <div class="btn-group d-flex justify-content-center mx-4">
-                  <input type="radio" class="btn-check" name="standard" id="bs6700" autocomplete="off" checked />
-                  <label class="btn btn-secondary" for="bs6700">BS 6700</label>
-
-                  <input type="radio" class="btn-check" name="standard" id="bs806" autocomplete="off" />
-                  <label class="btn btn-secondary" for="bs806">BS 806</label>
-
-                  <input type="radio" class="btn-check" name="standard" id="din1988" autocomplete="off" />
-                  <label class="btn btn-secondary" for="din1988">DIN 1988-3</label>
-                </div>
+    <div class="col-md-1">
+        
+    </div>
+        <!-- Left Column -->
+      <div class="col-md-5">
+        
+        <div class="card mb-3 bg-light">
+          <div class="card-body">
+            <h2 class="card-title text-center mb-4">Select applicable standard</h2>
+            <div class="btn-group d-flex justify-content-center mx-4">
+                <input type="radio" class="btn-check" name="standard" id="bs6700" autocomplete="off" checked />
+                <label class="btn btn-secondary" for="bs6700">BS 6700</label>
               
-            </div>
+                <input type="radio" class="btn-check" name="standard" id="bs806" autocomplete="off" />
+                <label class="btn btn-secondary" for="bs806">BS 806</label>
+              
+                <input type="radio" class="btn-check" name="standard" id="din1988" autocomplete="off" />
+                <label class="btn btn-secondary" for="din1988">DIN 1988-3</label>
+              </div>
           </div>
-  
-          <!-- Second Card -->
-          <div class="card mb-3 bg-light flex-grow-1">
-            <div class="card-body">
-              <!-- Card content -->
-              <h2 class="card-title text-center mb-4">Usage</h2>
-                <div class="btn-group d-flex justify-content-center mx-4">
-                  <input type="radio" class="btn-check" name="usage" id="low" autocomplete="off" checked />
-                  <label class="btn btn-secondary" for="low">Low</label>
-                
-                  <input type="radio" class="btn-check" name="usage" id="medium" autocomplete="off" />
-                  <label class="btn btn-secondary" for="medium">Medium</label>
-                
-                  <input type="radio" class="btn-check" name="usage" id="high" autocomplete="off" />
-                  <label class="btn btn-secondary" for="high">High</label>
-                </div>
-            </div>
+        </div>
+
+        <div class="card bg-light mb-3">
+          <div class="card-body">
+            <h2 class="card-title text-center mb-4">Usage</h2>
+            <div class="btn-group d-flex justify-content-center mx-4">
+                <input type="radio" class="btn-check" name="usage" id="low" autocomplete="off" checked />
+                <label class="btn btn-secondary" for="low">Low</label>
+              
+                <input type="radio" class="btn-check" name="usage" id="medium" autocomplete="off" />
+                <label class="btn btn-secondary" for="medium">Medium</label>
+              
+                <input type="radio" class="btn-check" name="usage" id="high" autocomplete="off" />
+                <label class="btn btn-secondary" for="high">High</label>
+              </div>
           </div>
-  
-          <!-- Third Card -->
-          <div class="card bg-light flex-grow-1">
-            <div class="card-body">
-              <!-- Card content -->
-              <h2 class="card-title text-center mb-4">DIN-1988-3 Options</h2>
-                <div class="mb-3">
-                  <label for="building-type" class="form-label">Select Building Type</label>
-                  <select id="building-type" class="form-select">
-                    <option value="Administration Building">Administration Building</option>
-                    <option value="Hospital">Hospital</option>
-                    <option value="Hotel">Hotel</option>
-                    <option value="Leisure centre">Leisure centre</option>
-                    <option value="Nursing home">Nursing home</option>
-                    <option value="Old peoples residence">Old peoples residence</option>
-                    <option value="Residential building">Residential building</option>
-                    <option value="School">School</option>
-                  </select>
-                </div>
+        </div>
+
+        <div class="card bg-light mb-3">
+          <div class="card-body">
+            <h2 class="card-title text-center mb-4">DIN-1988-3 Options</h2>
+            <div class="mb-3">
+              <label for="building-type" class="form-label">Select Building Type</label>
+              <select id="building-type" class="form-select">
+                <option value="Administration Building">Administration Building</option>
+                <option value="Hospital">Hospital</option>
+                <option value="Hotel">Hotel</option>
+                <option value="Leisure centre">Leisure centre</option>
+                <option value="Nursing home">Nursing home</option>
+                <option value="Old peoples residence">Old peoples residence</option>
+                <option value="Residential building">Residential building</option>
+                <option value="School">School</option>
+              </select>
             </div>
           </div>
         </div>
+        
       </div>
-  
+
+
       <!-- Right Column -->
-      <div class="col-md-6">
-        <div class="card bg-light h-100">
+      <div class="col-md-5">
+        
+        <div class="card bg-light">
           <div class="card-body">
-            <!-- Card content -->
             <h2 class="card-title text-center mb-4">Appliances</h2>
 
             <!-- header/heading row -->
             <div class="row">
-              <div class="col-md-4 mb-0 d-flex align-items-center">
+              <div class="col-md-4 mb-3 d-flex align-items-center">
                 <label class="form-label header-label">Description</label>
               </div>
-              <div class="col-md-4 mb-0 d-flex align-items-center justify-content-center">
+              <div class="col-md-4 mb-3 d-flex align-items-center justify-content-center">
                 <label class="form-label header-label">Quantity</label>
               </div> 
-              <div class="col-md-4 mb-0 text-center align-items-center">
+              <div class="col-md-4 mb-3 text-center align-items-center">
                 <label class="form-label header-label">LUs</label>
               </div>
             </div>
             <!-- End header/heading row -->
-
-            <!-- Add divider line -->
-            <hr class="mt-0">
 
             <div class="row">
                 <div class="col-md-4 mb-3 d-flex align-items-center">
@@ -228,18 +184,15 @@
                   <label for="wash-hand-basins" class="form-label" id="dw-lu">2</label>
                 </div>
             </div>
-          </div>
-        </div>
+            
       </div>
-
-      <!-- Add blank column to the left  -->
-      <!-- <div class="col-md-1">
+      <div class="col-md-1">
         
       </div>
-
+      
     </div>
+    
   </div>
-
   <div class="text-center mt-4">
     <button type="button" class="btn btn-primary" id="calculate-btn">Calculate</button>
   </div>
@@ -250,41 +203,36 @@
         <div class="output-box w-25"></div>
       </div>
     </div>
-  </div> -->
+  </div>
+  <script>
+    document.getElementById('calculate-btn').addEventListener('click', function() {
+      // Get the input values
+      var whblu = parseInt(document.getElementById('whb-lu').innerHTML);
+      var sinkslu = parseInt(document.getElementById('sinks-lu').innerHTML);
+      var ndslu = parseInt(document.getElementById('nds-lu').innerHTML);
+      var showerslu = parseInt(document.getElementById('showers-lu').innerHTML);
+      var bathslu = parseInt(document.getElementById('baths-lu').innerHTML);
+      var bidetslu = parseInt(document.getElementById('bidets-lu').innerHTML);
+      var wmlu = parseInt(document.getElementById('wm-lu').innerHTML);
+      var dwlu = parseInt(document.getElementById('dw-lu').innerHTML);
 
+      var washHandBasins = parseInt(document.getElementById('wash-hand-basins').value)*whblu || 0;
+      var sinks = parseInt(document.getElementById('sinks').value)*sinkslu || 0;
+      var nonDomesticSink = parseInt(document.getElementById('non-domestic-sink').value)*ndslu || 0;
+      var showers = parseInt(document.getElementById('showers').value)*showerslu || 0;
+      var baths = parseInt(document.getElementById('baths').value)*bathslu || 0;
+      var bidets = parseInt(document.getElementById('bidets').value)*bidetslu || 0;
+      var washingMachine = parseInt(document.getElementById('washing-machine').value)*wmlu || 0;
+      var dishWashers = parseInt(document.getElementById('dish-washers').value)*dwlu || 0;
 
-  
+      // Calculate the total
+      var total = washHandBasins + sinks + nonDomesticSink + showers + baths + bidets + washingMachine + dishWashers;
 
-<script>
-document.getElementById('calculate-btn').addEventListener('click', function() {
-  // Get the input values
-  var whblu = parseInt(document.getElementById('whb-lu').innerHTML);
-  var sinkslu = parseInt(document.getElementById('sinks-lu').innerHTML);
-  var ndslu = parseInt(document.getElementById('nds-lu').innerHTML);
-  var showerslu = parseInt(document.getElementById('showers-lu').innerHTML);
-  var bathslu = parseInt(document.getElementById('baths-lu').innerHTML);
-  var bidetslu = parseInt(document.getElementById('bidets-lu').innerHTML);
-  var wmlu = parseInt(document.getElementById('wm-lu').innerHTML);
-  var dwlu = parseInt(document.getElementById('dw-lu').innerHTML);
-
-  var washHandBasins = parseInt(document.getElementById('wash-hand-basins').value)*whblu || 0;
-  var sinks = parseInt(document.getElementById('sinks').value)*sinkslu || 0;
-  var nonDomesticSink = parseInt(document.getElementById('non-domestic-sink').value)*ndslu || 0;
-  var showers = parseInt(document.getElementById('showers').value)*showerslu || 0;
-  var baths = parseInt(document.getElementById('baths').value)*bathslu || 0;
-  var bidets = parseInt(document.getElementById('bidets').value)*bidetslu || 0;
-  var washingMachine = parseInt(document.getElementById('washing-machine').value)*wmlu || 0;
-  var dishWashers = parseInt(document.getElementById('dish-washers').value)*dwlu || 0;
-
-  // Calculate the total
-  var total = washHandBasins + sinks + nonDomesticSink + showers + baths + bidets + washingMachine + dishWashers;
-
-  // Display the result
-  document.querySelector('.output-box').textContent = total;
-});
-</script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
+      // Display the result
+      document.querySelector('.output-box').textContent = total;
+    });
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
