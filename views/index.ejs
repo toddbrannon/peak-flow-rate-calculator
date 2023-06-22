@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Peak Flow Rate Calculator</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/custom.css">
 </head>
 
 <body>
@@ -13,21 +14,25 @@
     <h1 class="text-center my-4">Peak Flow Rate Calculator</h1>
 
   <div class="container">
-    <div class="row h-100">
-        <div class="col-md-1"></div>
+    <div class="row">
+    <div class="col-md-1">
+        
+    </div>
+        <!-- Left Column -->
       <div class="col-md-5">
+        
         <div class="card mb-3 bg-light">
           <div class="card-body">
             <h2 class="card-title text-center mb-4">Select applicable standard</h2>
             <div class="btn-group d-flex justify-content-center mx-4">
-                <input type="radio" class="btn-check" name="options" id="option1" autocomplete="off" checked />
-                <label class="btn btn-secondary" for="option1">BS 6700</label>
+                <input type="radio" class="btn-check" name="standard" id="bs6700" autocomplete="off" checked />
+                <label class="btn btn-secondary" for="bs6700">BS 6700</label>
               
-                <input type="radio" class="btn-check" name="options" id="option2" autocomplete="off" />
-                <label class="btn btn-secondary" for="option2">BS 806</label>
+                <input type="radio" class="btn-check" name="standard" id="bs806" autocomplete="off" />
+                <label class="btn btn-secondary" for="bs806">BS 806</label>
               
-                <input type="radio" class="btn-check" name="options" id="option3" autocomplete="off" />
-                <label class="btn btn-secondary" for="option3">DIN 1988-3</label>
+                <input type="radio" class="btn-check" name="standard" id="din1988" autocomplete="off" />
+                <label class="btn btn-secondary" for="din1988">DIN 1988-3</label>
               </div>
           </div>
         </div>
@@ -36,14 +41,14 @@
           <div class="card-body">
             <h2 class="card-title text-center mb-4">Usage</h2>
             <div class="btn-group d-flex justify-content-center mx-4">
-                <input type="radio" class="btn-check" name="low" id="low" autocomplete="off" checked />
-                <label class="btn btn-secondary" for="option4">Low</label>
+                <input type="radio" class="btn-check" name="usage" id="low" autocomplete="off" checked />
+                <label class="btn btn-secondary" for="low">Low</label>
               
-                <input type="radio" class="btn-check" name="medium" id="medium" autocomplete="off" />
-                <label class="btn btn-secondary" for="option5">Medium</label>
+                <input type="radio" class="btn-check" name="usage" id="medium" autocomplete="off" />
+                <label class="btn btn-secondary" for="medium">Medium</label>
               
-                <input type="radio" class="btn-check" name="high" id="high" autocomplete="off" />
-                <label class="btn btn-secondary" for="option6">High</label>
+                <input type="radio" class="btn-check" name="usage" id="high" autocomplete="off" />
+                <label class="btn btn-secondary" for="high">High</label>
               </div>
           </div>
         </div>
@@ -66,11 +71,13 @@
             </div>
           </div>
         </div>
-
-
+        
       </div>
 
+
+      <!-- Right Column -->
       <div class="col-md-5">
+        
         <div class="card bg-light">
           <div class="card-body">
             <h2 class="card-title text-center mb-4">Appliances</h2>
@@ -82,7 +89,7 @@
                     <input type="number" class="form-control w-50 mx-auto" id="wash-hand-basins" min="0" max="999">
                 </div> 
                 <div class="col-md-4 mb-3 text-center align-items-center">
-                    <label for="wash-hand-basins" class="form-label">1</label>
+                    <label for="wash-hand-basins" class="form-label" id="whb-lu">1</label>
                   </div>
             </div>
             <div class="row">
@@ -93,7 +100,7 @@
                     <input type="number" class="form-control w-50 mx-auto" id="sinks" min="0" max="999">
                 </div> 
                 <div class="col-md-4 mb-3 text-center align-items-center">
-                    <label for="wash-hand-basins" class="form-label">2</label>
+                    <label for="wash-hand-basins" class="form-label" id="sinks-lu">2</label>
                   </div>
             </div>
             <div class="row">
@@ -104,7 +111,7 @@
                     <input type="number" class="form-control w-50 mx-auto" id="non-domestic-sink" min="0" max="999">
                 </div> 
                 <div class="col-md-4 mb-3 text-center align-items-center">
-                    <label for="wash-hand-basins" class="form-label">8</label>
+                    <label for="wash-hand-basins" class="form-label" id="nds-lu">8</label>
                   </div>
             </div>
             <div class="row">
@@ -115,7 +122,7 @@
                     <input type="number" class="form-control w-50 mx-auto" id="showers" min="0" max="999">
                 </div> 
                 <div class="col-md-4 mb-3 text-center align-items-center">
-                    <label for="wash-hand-basins" class="form-label">2</label>
+                    <label for="wash-hand-basins" class="form-label" id="showers-lu">2</label>
                   </div>
             </div>
             <div class="row">
@@ -126,7 +133,7 @@
                     <input type="number" class="form-control w-50 mx-auto" id="baths" min="0" max="999">
                 </div> 
                 <div class="col-md-4 mb-3 text-center align-items-center">
-                    <label for="wash-hand-basins" class="form-label">4</label>
+                    <label for="wash-hand-basins" class="form-label" id="baths-lu">4</label>
                   </div>
             </div>
             <div class="row">
@@ -137,7 +144,7 @@
                     <input type="number" class="form-control w-50 mx-auto" id="bidets" min="0" max="999">
                 </div> 
                 <div class="col-md-4 mb-3 text-center align-items-center">
-                    <label for="wash-hand-basins" class="form-label">1</label>
+                    <label for="wash-hand-basins" class="form-label" id="bidets-lu">1</label>
                   </div>
             </div>
             <div class="row">
@@ -148,7 +155,7 @@
                     <input type="number" class="form-control w-50 mx-auto" id="washing-machine" min="0" max="999">
                 </div> 
                 <div class="col-md-4 mb-3 text-center align-items-center">
-                    <label for="wash-hand-basins" class="form-label">2</label>
+                    <label for="wash-hand-basins" class="form-label" id="wm-lu">2</label>
                   </div>
             </div>
             <div class="row">
@@ -159,12 +166,14 @@
                     <input type="number" class="form-control w-50 mx-auto" id="dish-washers" min="0" max="999">
                 </div> 
                 <div class="col-md-4 mb-3 text-center align-items-center">
-                    <label for="wash-hand-basins" class="form-label">2</label>
+                    <label for="wash-hand-basins" class="form-label" id="dw-lu">2</label>
                   </div>
             </div>
             
       </div>
-      <div class="col-md-1"></div>
+      <div class="col-md-1">
+        
+      </div>
       
     </div>
     
@@ -173,6 +182,41 @@
     <button type="button" class="btn btn-primary" id="calculate-btn">Calculate</button>
   </div>
 
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-6 d-flex justify-content-center">
+        <div class="output-box w-25"></div>
+      </div>
+    </div>
+  </div>
+  <script>
+    document.getElementById('calculate-btn').addEventListener('click', function() {
+      // Get the input values
+      var whblu = parseInt(document.getElementById('whb-lu').innerHTML);
+      var sinkslu = parseInt(document.getElementById('sinks-lu').innerHTML);
+      var ndslu = parseInt(document.getElementById('nds-lu').innerHTML);
+      var showerslu = parseInt(document.getElementById('showers-lu').innerHTML);
+      var bathslu = parseInt(document.getElementById('baths-lu').innerHTML);
+      var bidetslu = parseInt(document.getElementById('bidets-lu').innerHTML);
+      var wmlu = parseInt(document.getElementById('wm-lu').innerHTML);
+      var dwlu = parseInt(document.getElementById('dw-lu').innerHTML);
+
+      var washHandBasins = parseInt(document.getElementById('wash-hand-basins').value)*whblu || 0;
+      var sinks = parseInt(document.getElementById('sinks').value)*sinkslu || 0;
+      var nonDomesticSink = parseInt(document.getElementById('non-domestic-sink').value)*ndslu || 0;
+      var showers = parseInt(document.getElementById('showers').value)*showerslu || 0;
+      var baths = parseInt(document.getElementById('baths').value)*bathslu || 0;
+      var bidets = parseInt(document.getElementById('bidets').value)*bidetslu || 0;
+      var washingMachine = parseInt(document.getElementById('washing-machine').value)*wmlu || 0;
+      var dishWashers = parseInt(document.getElementById('dish-washers').value)*dwlu || 0;
+
+      // Calculate the total
+      var total = washHandBasins + sinks + nonDomesticSink + showers + baths + bidets + washingMachine + dishWashers;
+
+      // Display the result
+      document.querySelector('.output-box').textContent = total;
+    });
+  </script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
