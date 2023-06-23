@@ -32,14 +32,14 @@
     <div class="row mb-4">
       <div class="col-md-6">
         <div class="d-flex flex-column h-100 justify-content-end">
-          <div class="mt-4 text-end">
+          <div class="mt-0 text-end">
             <button type="button" class="btn btn-primary btn-md" id="calculate-btn">Calculate</button>
           </div>
         </div>
       </div>
       <div class="col-md-6">
         <div class="d-flex flex-column h-100 justify-content-start">
-          <div class="mt-4 text-start">
+          <div class="mt-0 text-start">
             <div class="output-box w-25"></div>
           </div>
         </div>
@@ -231,6 +231,15 @@
           </div>
         </div>
       </div>
+      <div class="col-md-12">
+        <div class="row justify-content-center">
+          <div class="col-md-4 mb-3 mt-5 d-flex text-center">
+            <span class="">&copy; <span id="copyright">
+              year
+            </span> <a href="https://www.trusponse.com" target="_blank" class="">Todd Brannon for TruSponse Solutions</a>. All Rights Reserved.</span>
+          </div>
+        </div>
+      </div>
 
       <!-- Add blank column to the left  -->
       <!-- <div class="col-md-1">
@@ -252,8 +261,24 @@
     </div>
   </div> -->
 
+<!-- Dynamic copyright date -->
+<script>
+  const Copyright = new Date().getFullYear() + " ";
+  document.getElementById('copyright').textContent = Copyright;
+</script>
 
-  
+<!-- Get the selected elements from Standard, Usage, and DIN-1988-3 Options -->
+<script>
+  document.getElementById('calculate-btn').addEventListener('click', function() {
+    //alert('clicked');
+    const selectedStandard = document.querySelector('input[name="standard"]:checked').id;
+    //alert(selectedStandard);
+    const selectedUsage = document.querySelector('input[name="usage"]:checked').id;
+    const selectedBuildingType = document.getElementById('building-type').value;
+    alert(selectedStandard + "; " + selectedUsage + "; " + selectedBuildingType);
+    // You can perform further actions with the selectedStandard value
+  });
+</script>
 
 <script>
 document.getElementById('calculate-btn').addEventListener('click', function() {

@@ -1,3 +1,30 @@
+document.getElementById('calculate-btn').addEventListener('click', function() {
+  // Get the input values
+  var whblu = parseInt(document.getElementById('whb-lu').innerHTML);
+  var sinkslu = parseInt(document.getElementById('sinks-lu').innerHTML);
+  var ndslu = parseInt(document.getElementById('nds-lu').innerHTML);
+  var showerslu = parseInt(document.getElementById('showers-lu').innerHTML);
+  var bathslu = parseInt(document.getElementById('baths-lu').innerHTML);
+  var bidetslu = parseInt(document.getElementById('bidets-lu').innerHTML);
+  var wmlu = parseInt(document.getElementById('wm-lu').innerHTML);
+  var dwlu = parseInt(document.getElementById('dw-lu').innerHTML);
+
+  var washHandBasins = parseInt(document.getElementById('wash-hand-basins').value)*whblu || 0;
+  var sinks = parseInt(document.getElementById('sinks').value)*sinkslu || 0;
+  var nonDomesticSink = parseInt(document.getElementById('non-domestic-sink').value)*ndslu || 0;
+  var showers = parseInt(document.getElementById('showers').value)*showerslu || 0;
+  var baths = parseInt(document.getElementById('baths').value)*bathslu || 0;
+  var bidets = parseInt(document.getElementById('bidets').value)*bidetslu || 0;
+  var washingMachine = parseInt(document.getElementById('washing-machine').value)*wmlu || 0;
+  var dishWashers = parseInt(document.getElementById('dish-washers').value)*dwlu || 0;
+
+  // Calculate the total
+  var total = washHandBasins + sinks + nonDomesticSink + showers + baths + bidets + washingMachine + dishWashers;
+
+  // Display the result
+  document.querySelector('.output-box').textContent = total;
+
+
 function DIN_1988_3Calc(buildingType, totalFlow) {
     // Calculated diversified flow rate a function of total flow rate and factors due to building type
     // Flow rates need to be in litres per second, take values in at l/m
