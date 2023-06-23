@@ -5,7 +5,7 @@
     height: 40px;
     width: fit-content;
     padding: 10px;
-    background-color: #B4E2FC;
+    background-color: #80EEC0;
     border-radius: 5px;
   }
 
@@ -21,3 +21,22 @@
   .card {
     flex: 1;
   }
+
+  #calculate-btn {
+    width: 25%;
+  }
+
+  .custom-btn {
+    border: 2px solid var(--bs-primary);
+    background-color: var(--bs-primary);
+    color: #fff;
+    width: 25%;
+    height: 100%;
+  }
+  
+  .custom-btn:hover {
+    border: 2px solid#6B82FA;
+    background-color: #6B82FA;
+    color: #fff;
+  }
+  
