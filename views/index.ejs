@@ -30,16 +30,16 @@
 
     <!-- Row for 'Calculate' button and Output -->
     <div class="row mb-4">
-      <div class="col-md-6">
+      <div class="col-lg-6">
         <div class="d-flex flex-column h-100 justify-content-end">
-          <div class="mt-0 text-end">
+          <div class="mt-0 text-end container-calculation">
             <button type="button" class="btn btn-primary btn-md align-self-end custom-btn" id="calculate-btn">Calculate</button>
           </div>
         </div>
       </div>
-      <div class="col-md-6">
+      <div class="col-md-6 output-column">
         <div class="d-flex flex-column h-100 justify-content-start">
-          <div class="mt-0 text-start">
+          <div class="mt-0 text-start container-calculation">
             <div class="output-box w-25 text-center border border-secondary border-1 d-flex align-items-center justify-content-center">
               <!-- Content here -->
             </div>
@@ -57,24 +57,24 @@
 
     <div class="row">
       <!-- Left Column -->
-      <div class="col-md-6">
+      <div class="col-lg-6">
         <div class="d-flex flex-column h-100">
           <!-- First Card -->
           
           <div class="card mb-3 bg-light flex-grow-1">
             <div class="card-body">
               <!-- Card content -->
-              <h2 class="card-title text-center mb-4">Select applicable standard</h2>
+              <h4 class="card-title text-center mb-5 mt-2">Select applicable standard</h4>
 
                 <div class="btn-group d-flex justify-content-center mx-4">
-                  <input type="radio" class="btn-check" name="standard" id="bs6700" autocomplete="off" checked />
-                  <label class="btn btn-secondary" for="bs6700">BS 6700</label>
+                  <input type="radio" class="btn-check btn-radio" name="standard" id="bs6700" autocomplete="off" checked />
+                  <label class="btn btn-secondary btn-radio" for="bs6700">BS 6700</label>
 
-                  <input type="radio" class="btn-check" name="standard" id="bs806" autocomplete="off" />
-                  <label class="btn btn-secondary" for="bs806">BS 806</label>
+                  <input type="radio" class="btn-check btn-radio" name="standard" id="bs806" autocomplete="off" />
+                  <label class="btn btn-secondary btn-radio" for="bs806">BS 806</label>
 
-                  <input type="radio" class="btn-check" name="standard" id="din1988" autocomplete="off" />
-                  <label class="btn btn-secondary" for="din1988">DIN 1988-3</label>
+                  <input type="radio" class="btn-check btn-radio" name="standard" id="din1988" autocomplete="off" />
+                  <label class="btn btn-secondary btn-radio" for="din1988">DIN 1988-3</label>
                 </div>
               
             </div>
@@ -84,16 +84,16 @@
           <div class="card mb-3 bg-light flex-grow-1">
             <div class="card-body">
               <!-- Card content -->
-              <h2 class="card-title text-center mb-4">Usage</h2>
+              <h4 class="card-title text-center mb-5 mt-2">Usage</h4>
                 <div class="btn-group d-flex justify-content-center mx-4">
                   <input type="radio" class="btn-check" name="usage" id="low" autocomplete="off" checked />
-                  <label class="btn btn-secondary" for="low">Low</label>
+                  <label class="btn btn-secondary btn-radio" for="low">Low</label>
                 
                   <input type="radio" class="btn-check" name="usage" id="medium" autocomplete="off" />
-                  <label class="btn btn-secondary" for="medium">Medium</label>
+                  <label class="btn btn-secondary btn-radio" for="medium">Medium</label>
                 
                   <input type="radio" class="btn-check" name="usage" id="high" autocomplete="off" />
-                  <label class="btn btn-secondary" for="high">High</label>
+                  <label class="btn btn-secondary btn-radio" for="high">High</label>
                 </div>
             </div>
           </div>
@@ -102,7 +102,7 @@
           <div class="card bg-light flex-grow-1">
             <div class="card-body">
               <!-- Card content -->
-              <h2 class="card-title text-center mb-4">DIN-1988-3 Options</h2>
+              <h4 class="card-title text-center mb-4 mt-2">DIN-1988-3 Options</h4>
                 <div class="mb-3">
                   <label for="building-type" class="form-label">Select Building Type</label>
                   <select id="building-type" class="form-select">
@@ -122,11 +122,11 @@
       </div>
   
       <!-- Right Column -->
-      <div class="col-md-6">
-        <div class="card bg-light h-100">
+      <div class="col-lg-6">
+        <div class="card bg-light h-100 card-appliances">
           <div class="card-body">
             <!-- Card content -->
-            <h2 class="card-title text-center mb-4">Appliances</h2>
+            <h4 class="card-title text-center mb-4 mt-2">Appliances</h4>
 
             <!-- header/heading row -->
             <div class="row">
@@ -145,102 +145,102 @@
             <!-- Add divider line -->
             <hr class="mt-0">
 
-            <div class="row">
-                <div class="col-md-4 mb-3 d-flex align-items-center">
+            <div class="row mb-2">
+                <div class="col-md-4 mt-2 d-flex align-items-center">
                   <label for="whb-lu" class="form-label">Wash hand basins</label>
                 </div>
-                <div class="col-md-4 mb-3 d-flex align-items-center">
+                <div class="col-md-4 d-flex align-items-center">
                     <input type="number" class="form-control w-50 mx-auto" id="wash-hand-basins" min="0" max="999">
                 </div> 
-                <div class="col-md-4 mb-3 text-center align-items-center">
+                <div class="col-md-4 mt-2 text-center align-items-center">
                     <label for="whb-lu" class="form-label" id="whb-lu"></label>
                   </div>
             </div>
-            <div class="row">
-                <div class="col-md-4 mb-3 d-flex align-items-center">
+            <div class="row mb-2">
+                <div class="col-md-4 mt-2 d-flex align-items-center">
                   <label for="sinks" class="form-label">Sinks</label>
                 </div>
-                <div class="col-md-4 mb-3 d-flex align-items-center">
+                <div class="col-md-4 d-flex align-items-center">
                     <input type="number" class="form-control w-50 mx-auto" id="sinks" min="0" max="999">
                 </div> 
-                <div class="col-md-4 mb-3 text-center align-items-center">
+                <div class="col-md-4 mt-2 text-center align-items-center">
                     <label for="sinks-lu" class="form-label" id="sinks-lu"></label>
                   </div>
             </div>
-            <div class="row">
-                <div class="col-md-4 mb-3 d-flex align-items-center">
+            <div class="row mb-2">
+                <div class="col-md-4 mt-2 d-flex align-items-center">
                   <label for="nds" class="form-label">Non-domestic sink</label>
                 </div>
-                <div class="col-md-4 mb-3 d-flex align-items-center">
+                <div class="col-md-4 d-flex align-items-center">
                     <input type="number" class="form-control w-50 mx-auto" id="non-domestic-sink" min="0" max="999">
                 </div> 
-                <div class="col-md-4 mb-3 text-center align-items-center">
+                <div class="col-md-4 mt-2 text-center align-items-center">
                     <label for="nds-lu" class="form-label" id="nds-lu"></label>
                   </div>
             </div>
-            <div class="row">
-                <div class="col-md-4 mb-3 d-flex align-items-center">
+            <div class="row mb-2">
+                <div class="col-md-4 mt-2 d-flex align-items-center">
                   <label for="showers" class="form-label">Showers</label>
                 </div>
-                <div class="col-md-4 mb-3 d-flex align-items-center">
+                <div class="col-md-4 d-flex align-items-center">
                     <input type="number" class="form-control w-50 mx-auto" id="showers" min="0" max="999">
                 </div> 
-                <div class="col-md-4 mb-3 text-center align-items-center">
+                <div class="col-md-4 mt-2 text-center align-items-center">
                     <label for="showers-lu" class="form-label" id="showers-lu"></label>
                   </div>
             </div>
-            <div class="row">
-                <div class="col-md-4 mb-3 d-flex align-items-center">
+            <div class="row mb-2">
+                <div class="col-md-4 mt-2 d-flex align-items-center">
                   <label for="baths" class="form-label">Baths</label>
                 </div>
-                <div class="col-md-4 mb-3 d-flex align-items-center">
+                <div class="col-md-4 d-flex align-items-center">
                     <input type="number" class="form-control w-50 mx-auto" id="baths" min="0" max="999">
                 </div> 
-                <div class="col-md-4 mb-3 text-center align-items-center">
+                <div class="col-md-4 mt-2 text-center align-items-center">
                     <label for="baths-lu" class="form-label" id="baths-lu"></label>
                   </div>
             </div>
-            <div class="row">
-                <div class="col-md-4 mb-3 d-flex align-items-center">
+            <div class="row mb-2">
+                <div class="col-md-4 mt-2 d-flex align-items-center">
                   <label for="bidets" class="form-label">Bidets</label>
                 </div>
-                <div class="col-md-4 mb-3 d-flex align-items-center">
+                <div class="col-md-4 d-flex align-items-center">
                     <input type="number" class="form-control w-50 mx-auto" id="bidets" min="0" max="999">
                 </div> 
-                <div class="col-md-4 mb-3 text-center align-items-center">
+                <div class="col-md-4 mt-2 text-center align-items-center">
                     <label for="bidets-lu" class="form-label" id="bidets-lu"></label>
                   </div>
             </div>
-            <div class="row">
-                <div class="col-md-4 mb-3 d-flex align-items-center">
+            <div class="row mb-2">
+                <div class="col-md-4 mt-2 d-flex align-items-center">
                   <label for="wm" class="form-label">Washing Machine</label>
                 </div>
-                <div class="col-md-4 mb-3 d-flex align-items-center">
+                <div class="col-md-4 d-flex align-items-center">
                     <input type="number" class="form-control w-50 mx-auto" id="washing-machine" min="0" max="999">
                 </div> 
-                <div class="col-md-4 mb-3 text-center align-items-center">
+                <div class="col-md-4 mt-2 text-center align-items-center">
                     <label for="wm-lu" class="form-label" id="wm-lu"></label>
                   </div>
             </div>
-            <div class="row">
-                <div class="col-md-4 mb-3 d-flex align-items-center">
+            <div class="row mb-2">
+                <div class="col-md-4 mt-2 d-flex align-items-center">
                   <label for="dw" class="form-label">Dish washers</label>
                 </div>
-                <div class="col-md-4 mb-3 d-flex align-items-center">
+                <div class="col-md-4 d-flex align-items-center">
                   <input type="number" class="form-control w-50 mx-auto" id="dish-washers" min="0" max="999">
                 </div> 
-                <div class="col-md-4 mb-3 text-center align-items-center">
+                <div class="col-md-4 mt-2 text-center align-items-center">
                   <label for="dw-lu" class="form-label" id="dw-lu"></label>
                 </div>
             </div>
             <div class="row">
-              <div class="col-md-4 mb-3 d-flex align-items-center">
+              <div class="col-md-4 mb-2 d-flex align-items-center">
                 <label for="total-loading units" class="form-label fw-bold">Total Loading Units</label>
               </div>
-              <div class="col-md-4 mb-3 d-flex align-items-center">
+              <div class="col-md-4 mb-2 d-flex align-items-center">
                 
               </div> 
-              <div class="col-md-4 mb-3 text-center align-items-center">
+              <div class="col-md-4 mb-2 text-center align-items-center">
                 <label for="total-loading-units" class="form-label fw-bold total-loading-units" id="total-loading-units"></label>
               </div>
             </div>
@@ -252,30 +252,11 @@
           <div class="col-md-4 mb-3 mt-5 d-flex text-center">
             <span class="">&copy; <span id="copyright">
               year
-            </span> <a href="https://www.trusponse.com" target="_blank" class="">Todd Brannon for TruSponse Solutions</a>. All Rights Reserved.</span>
+            </span class="copyright"> <a href="https://www.trusponse.com" target="_blank" class="">Todd Brannon for TruSponse Solutions</a>. All Rights Reserved.</span>
           </div>
         </div>
       </div>
 
-      <!-- Add blank column to the left  -->
-      <!-- <div class="col-md-1">
-        
-      </div>
-
-    </div>
-  </div>
-
-  <div class="text-center mt-4">
-    <button type="button" class="btn btn-primary" id="calculate-btn">Calculate</button>
-  </div>
-
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-md-6 d-flex justify-content-center">
-        <div class="output-box w-25"></div>
-      </div>
-    </div>
-  </div> -->
 
 <!-- Dynamic copyright date -->
 <script>
@@ -283,68 +264,7 @@
   document.getElementById('copyright').textContent = Copyright;
 </script>
 
-<!-- Get the selected elements from Standard, Usage, and DIN-1988-3 Options -->
-<!-- <script>
-  document.getElementById('calculate-btn').addEventListener('click', function() {
-    //alert('clicked');
-    const selectedStandard = document.querySelector('input[name="standard"]:checked').id;
-    //alert(selectedStandard);
-    const selectedUsage = document.querySelector('input[name="usage"]:checked').id;
-    const selectedBuildingType = document.getElementById('building-type').value;
-    alert(selectedStandard + "; " + selectedUsage + "; " + selectedBuildingType);
-    // You can perform further actions with the selectedStandard value
-  });
-</script> -->
-
-<!-- <script>
-document.getElementById('calculate-btn').addEventListener('click', function() {
-  // Get the input values
-  var whblu = parseInt(document.getElementById('whb-lu').innerHTML);
-  var sinkslu = parseInt(document.getElementById('sinks-lu').innerHTML);
-  var ndslu = parseInt(document.getElementById('nds-lu').innerHTML);
-  var showerslu = parseInt(document.getElementById('showers-lu').innerHTML);
-  var bathslu = parseInt(document.getElementById('baths-lu').innerHTML);
-  var bidetslu = parseInt(document.getElementById('bidets-lu').innerHTML);
-  var wmlu = parseInt(document.getElementById('wm-lu').innerHTML);
-  var dwlu = parseInt(document.getElementById('dw-lu').innerHTML);
-
-  var washHandBasins = parseInt(document.getElementById('wash-hand-basins').value)*whblu || 0;
-  var sinks = parseInt(document.getElementById('sinks').value)*sinkslu || 0;
-  var nonDomesticSink = parseInt(document.getElementById('non-domestic-sink').value)*ndslu || 0;
-  var showers = parseInt(document.getElementById('showers').value)*showerslu || 0;
-  var baths = parseInt(document.getElementById('baths').value)*bathslu || 0;
-  var bidets = parseInt(document.getElementById('bidets').value)*bidetslu || 0;
-  var washingMachine = parseInt(document.getElementById('washing-machine').value)*wmlu || 0;
-  var dishWashers = parseInt(document.getElementById('dish-washers').value)*dwlu || 0;
-
-  // Calculate the total
-  var total = washHandBasins + sinks + nonDomesticSink + showers + baths + bidets + washingMachine + dishWashers;
-
-  // Display the result
-  document.querySelector('.output-box').textContent = total;
-  document.querySelector('.total-loading-units').textContent = total;
-
-  var totalFlow = total;
-
-  function calculateFlow() {
-    var divFlow
-    if (totalFlow <= 0) {
-      console.log("DivFlow is 0");
-      divFlow = 0;
-    } else if (selectedStandard === "BS 6700") {
-      console.log("BS 6700 Calculation");
-      divFlow = calc6700((totalFlow / 10) * 60) * 60;
-    } else if (selectedStandard === "BS 806") {
-      console.log("BS 806 Calculation");
-      divFlow = calc806((totalFlow / 10) * 60) * 60;
-    } else {
-      console.log("DIN 1988-3 Calculation");
-      divFlow = DIN_1988_3Calc(selectedBuildingType, (totalFlow / 10) * 60) * 60;
-    }
-  }
-
-
-</script> -->
+</script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script src="js/script.js"></script>
 </body>

@@ -5,13 +5,21 @@
     height: 40px;
     width: fit-content;
     padding: 10px;
-    background-color: #80EEC0;
-    border-radius: 5px;
+    background-color: #bde9f9;
+    border-radius: 2px;
+    border: 1px solid #32aadd;
+  }
+
+  #calculate-btn {
+    background-color: #32aadd;
+    color: #fff;
+    border: 1px solid #32aadd;
   }
 
   .header-label {
      font-weight: bold;
      font-size: 20px;
+     color: #32aadd;
   }
 
   .row {
@@ -38,5 +46,89 @@
     border: 2px solid#6B82FA;
     background-color: #6B82FA;
     color: #fff;
+  }
+
+  .btn-check + .btn-radio {
+    background-color: #fff;
+    color:#32aadd;
+    border: 1px solid #32aadd;
+  }
+
+  .btn-check:hover + .btn-radio {
+    background-color: #96d9f2;
+    color:#fff;
+    border: 1px solid #32aadd;
+  }
+
+  .btn-check:checked + .btn-radio {
+    background-color: #32aadd;
+    color: #fff;
+    border: 1px solid #32aadd;
+  }
+
+  a {
+    text-decoration: none;
+    color: #000;!important;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  @media screen and (max-width: 1201px) {
+    .right-column {
+      margin-top: 20px;
+    }
+    label {
+      font-size: 90%; /* Adjust the percentage as needed */
+    }
+    .btn-radio {
+      font-size: 90%; /* Adjust the percentage as needed */
+    }
+    .form-select {
+      font-size: 90%; /* Adjust the percentage as needed */
+    }
+  }
+
+  @media screen and (max-width: 991px) {
+    .right-column {
+      margin-top: 20px;
+    }
+    body, h2, label, input, .radio {
+      font-size: 90%; /* Adjust the percentage as needed */
+    }
+    .card-appliances {
+      margin-top: 20px;
+    }
+    .container-calculation {
+      display: flex;
+      justify-content: center;
+      align-items: center; 
+    }
+    .card-title {
+      margin-bottom: 0px;!important;
+    }
+    .output-column {
+      width: 100%;
+    }
+  }
+  
+
+  @media screen and (max-width: 768px) {
+    .right-column {
+      margin-top: 20px;
+    }
+    body, h2, label, input, .radio {
+      font-size: 90%; /* Adjust the percentage as needed */
+    }
+    .card-appliances {
+      margin-top: 20px;
+    }
+    .container-calculation {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+       /* Adjust the height as needed */
+    }
   }
   
