@@ -20,7 +20,7 @@ document.getElementById('calculate-btn').addEventListener('click', function() {
   
 // Calculate the total
 var total = washHandBasins + sinks + nonDomesticSink + showers + baths + bidets + washingMachine + dishWashers;
-
+// alert(washHandBasins +", " + sinks +", " + nonDomesticSink +", " + showers +", " + baths +", " + bidets +", " + washingMachine +", " + dishWashers)
 // Display the result
 // alert("Total = " + total);
 document.querySelector('.total-loading-units').textContent = total;
@@ -29,7 +29,7 @@ document.querySelector('.total-loading-units').textContent = total;
 var divFlow = calculateFlow(total);
 
 // Display the divFlow result
-document.querySelector('.output-box').textContent = divFlow.toFixed(2) + " l/s";
+document.querySelector('.output-box').textContent = divFlow.toFixed(2) + " l/m";
 });
 
 
@@ -40,14 +40,14 @@ function calculateFlow(totalFlow) {
   var selectedUsage = document.querySelector('input[name="usage"]:checked').id;
   var selectedBuildingType = document.getElementById('building-type').value;  
   var divFlow
-  console.log(selectedStandard);
+  // alert(selectedStandard);
   if (totalFlow <= 0) {
     console.log("DivFlow is 0");
     divFlow = 0;
-  } else if (selectedStandard === "BS 6700") {
+  } else if (selectedStandard === "bs6700") {
     console.log("BS 6700 Calculation");
     divFlow = calc6700((totalFlow / 10) * 60) * 60;
-  } else if (selectedStandard === "BS 806") {
+  } else if (selectedStandard === "bs806") {
     console.log("BS 806 Calculation");
     divFlow = calc806((totalFlow / 10) * 60) * 60;
   } else {
@@ -134,5 +134,81 @@ function calc6700(totalFlow) {
   return calc6700;
   console.log("Calc6700 is" + calc6700);
 }
+
+
+
+// Get the usage radio buttons
+const usageRadios = document.getElementsByName('usage');
+
+// Add event listeners to the radio buttons
+usageRadios.forEach(radio => {
+  radio.addEventListener('change', updateLabels);
+});
+
+// Function to update the labels based on the selected radio button
+function updateLabels() {
+  // Get the selected radio button's value
+  const selectedUsage = document.querySelector('input[name="usage"]:checked').id;
+  // alert(selectedUsage)
+
+  // Get the corresponding LU values from the JSON data
+  const luData = {
+    "low": {
+      "whb-lu": 1,
+      "sinks-lu": 2,
+      "nds-lu": 8,
+      "showers-lu": 2,
+      "baths-lu": 4,
+      "bidets-lu": 1,
+      "wm-lu": 2,
+      "dw-lu": 2
+    },
+    "medium": {
+      // Add key-value pairs for the 'Medium' collection here
+      "whb-lu": 2,
+      "sinks-lu": 5,
+      "nds-lu": 8,
+      "showers-lu": 3,
+      "baths-lu": 8,
+      "bidets-lu": 1,
+      "wm-lu": 2,
+      "dw-lu": 2
+    },
+    "high": {
+      // Add key-value pairs for the 'High' collection here
+      "whb-lu": 4,
+      "sinks-lu": 10,
+      "nds-lu": 8,
+      "showers-lu": 6,
+      "baths-lu": 16,
+      "bidets-lu": 1,
+      "wm-lu": 2,
+      "dw-lu": 2
+    }
+  };
+
+  // alert(selectedUsage)
+
+  // alert(luData[selectedUsage])
+
+  // Update the labels' text based on the selected usage
+  // Update the labels' text based on the selected usage
+document.getElementById('whb-lu').textContent = luData[selectedUsage]["whb-lu"];
+document.getElementById('sinks-lu').textContent = luData[selectedUsage]["sinks-lu"];
+document.getElementById('nds-lu').textContent = luData[selectedUsage]["nds-lu"];
+document.getElementById('showers-lu').textContent = luData[selectedUsage]["showers-lu"];
+document.getElementById('baths-lu').textContent = luData[selectedUsage]["baths-lu"];
+document.getElementById('bidets-lu').textContent = luData[selectedUsage]["bidets-lu"];
+document.getElementById('wm-lu').textContent = luData[selectedUsage]["wm-lu"];
+document.getElementById('dw-lu').textContent = luData[selectedUsage]["dw-lu"];
+
+// Return the updated labels (optional)
+return luData[selectedUsage];
+  
+}
+
+// Call the function initially to set the initial labels
+updateLabels();
+
 
   
